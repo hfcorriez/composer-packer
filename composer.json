@@ -12,7 +12,5 @@
       "homepage": "http://feiyang.me"
     },
   ],
-  "require": {
-  },
   "bin": ["bin/pack"]
 }
