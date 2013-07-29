@@ -7,11 +7,17 @@ then
 fi
 
 VER=$1
-MAN=`dirname $(dirname $0)`
+ROOT=`pwd`
 TH="h"
 
-echo "+ cd $MAN"
-cd $MAN
+if [ ! -d "$ROOT/vendor" ]
+then
+    echo "'vendor/' dir not found, run command under project root directory."
+    exit 1
+fi
+
+echo "+ cd $ROOT"
+cd $ROOT
 echo "+ mkdir -p build"
 mkdir -p build
 echo "+ rm -rf dist"
