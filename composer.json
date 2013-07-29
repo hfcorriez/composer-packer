@@ -1,0 +1,18 @@
+{
+  "name": "pagon/composer-packer",
+  "type": "library",
+  "description": "Packer for build tar.gz for composer project",
+  "keywords": ["build", "pack", "packer"],
+  "homepage": "http://github.com/hfcorriez/composer-packer",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Corrie Zhao",
+      "email": "hfcorriez@gmail.com",
+      "homepage": "http://feiyang.me"
+    },
+  ],
+  "require": {
+  },
+  "bin": ["bin/pack"]
+}

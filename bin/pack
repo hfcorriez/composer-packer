@@ -1,0 +1,49 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+    echo "Usage: $0 [VERSION]"
+    exit 1
+fi
+
+VER=$1
+MAN=`dirname $(dirname $0)`
+TH="h"
+
+echo "+ cd $MAN"
+cd $MAN
+echo "+ mkdir -p build"
+mkdir -p build
+echo "+ rm -rf dist"
+rm -rf dist
+echo "+ mkdir -p dist"
+mkdir -p dist
+echo "+ cp -fRH * dist/"
+for i in `ls`
+do
+    if [ "$i" != "dist" ] && [ "$i" != "build" ]
+    then
+        cp -fRH $i dist/
+    fi
+done
+cd dist/
+echo "+ find vendor -name \".git*\" | xargs rm -rf"
+find vendor -name ".git*" | xargs rm -rf
+echo "+ cd .."
+cd ..
+echo "+ mv dist build/$VER"
+mv dist build/$VER
+cd build
+tar --version | grep "bsdtar" > /dev/null
+if [ $? == 0 ]; then
+    echo "+ tar zcfH $VER.tar.gz $VER/"
+    tar zcfH $VER.tar.gz $VER/
+else
+    echo "+ tar zcfh $VER.tar.gz $VER/"
+    tar zcfh $VER.tar.gz $VER/
+fi
+echo "+ rm -rf $VER/"
+rm -rf $VER/
+echo "+ cd $PWD"
+cd $PWD
+echo "Build $VER finished in 'build/$VER.tar.gz'"
