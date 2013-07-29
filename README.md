@@ -16,7 +16,7 @@ Add `pagon/composer-packer` to your `composer.json`
 
 ```
 "require-dev": {
-  "pagon/composer-packer": "0.1.0"
+  "pagon/composer-packer": "0.1.x"
 }
 ```
 
@@ -31,13 +31,13 @@ composer.phar update --dev
 Run command in your project root:
 
 ```
-./vendor/bin/pack 0.1.0
+./vendor/bin/pack 1.0.0
 ```
 
 Then you'll get the package under `build` direcotry, such as:
 
 ```
-build/0.1.0.tar.gz
+build/1.0.0.tar.gz
 ```
 
 # License
