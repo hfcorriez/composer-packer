@@ -1,6 +1,6 @@
 # Intro
 
-composer-packer is a CLI utility for pack `Composer Project` to *.tar.gz package. The package includes composer vendors for production enviorment.
+composer-packer is a CLI utility for pack `Composer Project` to *.tar.gz package. The package includes composer vendors and your source code for production enviorment.
 
 It will useful to:
 
