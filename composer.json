@@ -10,7 +10,7 @@
       "name": "Corrie Zhao",
       "email": "hfcorriez@gmail.com",
       "homepage": "http://feiyang.me"
-    },
+    }
   ],
   "bin": ["bin/pack"]
 }
